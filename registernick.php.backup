@@ -1,0 +1,65 @@
+
+<?php
+    ini_set('display_errors', '1');
+    ini_set('error_reporting', E_ALL);
+    session_start(); // Start the session to store user data
+    if($_POST) {
+        //var_dump($_POST);
+        $db = new SQLite3('test.sqlite');
+
+        //check if account already exists
+        $qry = $db->prepare('SELECT * FROM users WHERE googleID=:googleID');
+        $qry->bindValue(':googleID', $_SESSION['googleID'], SQLITE3_TEXT);
+        $result = $qry->execute();
+        if($res=$result->fetchArray()) {
+            if($res["ID"]==$_SESSION['googleID']){
+                die("Your account already exists.<BR>貴方のアカウントすでに存在しています。<BR>Tu cuenta ya existe.");
+            }    
+        }
+        //check before adding unique field
+        $qry = $db->prepare('SELECT * FROM users WHERE nickname=:nickname');
+        $qry->bindValue(':nickname', $_POST["nickname"], SQLITE3_TEXT);
+        $result = $qry->execute();
+        if($res=$result->fetchArray()) {
+            if($res["nickname"]==$_POST["nickname"]){
+                echo("nickanme:".$res["nickname"])."<BR>";
+                die("Nickname already exists, go back and choose anohter nickname please.<BR>貴方のハンドル名がすでに存在しています、バックして、変えて下さい。<BR>Tu alias ya existe, preciona atras y pon otro alias porfavor.");
+            }
+        }else{
+            $qry = $db->prepare('INSERT INTO users (googleID,fullname, nickname,email) VALUES (:googleID, :fullname, :nickname, :email)');
+            $qry->bindValue(':googleID', $_SESSION['googleID'], SQLITE3_TEXT);
+            $qry->bindValue(':fullname', $_SESSION['user_name'], SQLITE3_TEXT);
+            $qry->bindValue(':nickname', $_POST["nickname"], SQLITE3_TEXT);
+            $qry->bindValue(':email', $_SESSION['user_email'], SQLITE3_TEXT);
+            try {
+                $qry->execute();
+            } catch (Exception $e) {
+                die('Caught exception: ',  $e->getMessage(), "\n");
+            }
+            die("User account created!<BR>アカウント作成成功しました！<BR>Tu cuenta ha sido creada!");    
+            header("Location: https://amjp.psy-k.org/s-found2/list_apps.php"); 
+            exit();
+        }
+    } else {
+        $db = new SQLite3('test.sqlite');
+
+        //check if account already exists
+        $qry = $db->prepare('SELECT * FROM users WHERE ID=:googleID');
+        $qry->bindValue(':googleID', $_SESSION['googleID'], SQLITE3_INTEGER);
+        $result = $qry->execute();
+        if($res=$result->fetchArray()) {
+            if($res["ID"]==$_SESSION['googleID']){
+                die("Your account already exists.<BR>貴方のアカウントすでに存在しています。<BR>Tu cuenta ya existe.<BR>redirecting/転送中/redireccionando");
+                header("Location: https://amjp.psy-k.org/s-found2/list_apps.php"); 
+                exit();
+            }    
+        }
+
+        //var_dump($_GET);
+        echo("<form action=\"registernick.php\" method=\"POST\">");
+        echo("<input type=\"text\" name=\"googleID\" value=\"" . $_SESSION['googleID'] . "\" style='display: none;'><br>");
+        echo("<input type=\"text\" name=\"email\" value=\"" . $_SESSION['user_email'] . "\" style='display: none;'><br>");
+        echo("nickname/ハンドル名/alias: <input type=\"text\" name=\"nickname\"><br>");
+        echo("<input type=\"submit\"></form>");
+    }
+?>

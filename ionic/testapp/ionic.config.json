@@ -1,0 +1,5 @@
+{
+  "name": "testapp",
+  "integrations": {},
+  "type": "vue-vite"
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>s-found2 app store</title>
+    </head>
+    <body>
+<?php
+ini_set('display_errors', '1');
+ini_set('error_reporting', E_ALL);
+session_start(); // Start the session to store user data
+
+// Connect to SQLite database
+$db = new SQLite3('test.sqlite');
+
+// Check if user is logged in and fetch purchased app IDs
+$logged_in = isset($_SESSION['googleID']);
+$purchased_appids = [];
+$current_userid = null;
+if ($logged_in) {
+    //** Retrieve ID from users table
+    $stmt = $db->prepare('SELECT ID FROM users WHERE googleID = :googleID');
+    $stmt->bindValue(':googleID', $_SESSION["googleID"], SQLITE3_TEXT);
+    $result = $stmt->execute();
+    $user = $result->fetchArray(SQLITE3_ASSOC);
+    if(!$user){
+        $db->close();
+        die("user nor logged in");
+    }
+    $current_userid=(int)$user["ID"];
+    
+    //$current_userid = $_SESSION['googleID'];
+    $stmt = $db->prepare('SELECT appid FROM purchasestable WHERE userid = :userid');
+    $stmt->bindValue(':userid', $current_userid, SQLITE3_INTEGER);
+    $result = $stmt->execute();
+    while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+        $purchased_appids[] = $row['appid'];
+    }
+}
+
+// Query to retrieve all apps
+$result = $db->query('SELECT * FROM appstable JOIN users ON appstable.creatorid=users.ID;');
+
+echo "<h1>s-found2 app store</h1>";
+echo "<a href='https://amjp.psy-k.org/s-found2/s-found2.php' style='display:inline-block; padding:5px 10px; background-color:#4CAF50; color:white; text-decoration:none; margin-left:10px;'>Make New s-found App</a>";
+echo "<a href='https://amjp.psy-k.org/s-found2/add_app.php' style='display:inline-block; padding:5px 10px; background-color:#4CAF50; color:white; text-decoration:none; margin-left:10px;'>Add Your Own App to this app store</a>";
+echo "<a href='https://amjp.psy-k.org/s-found2/cookiewarning.html' style='display:inline-block; padding:5px 10px; background-color:#4CAF50; color:white; text-decoration:none; margin-left:10px;'>Log-in</a>";
+// Loop through each app
+while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+    echo "<div style='border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;'>";
+    
+    // Display app details
+    echo "<h2>" . htmlspecialchars($row['appname']) . "</h2>";
+    echo "<p><strong>Created by:</strong> " . htmlspecialchars($row['nickname']) . "</p>";
+    echo "<p><strong>Description:</strong> " . htmlspecialchars($row['appdescription']) . "</p>";
+    echo "<p><strong>Cost:</strong> $" . htmlspecialchars($row['costdollars']) . "." . htmlspecialchars($row['costcents']) . "</p>";
+    echo "<p><strong>Payment Type:</strong> " . ($row['paymenttypeisuserdecide'] == 'true' ? 'User Decides' : 'Fixed') . "</p>";
+    
+    // Display screenshots
+    if (!empty($row['screenshots'])) {
+        echo "<h3>Screenshots:</h3>";
+        $screenshots = explode(',', $row['screenshots']);
+        foreach ($screenshots as $screenshot) {
+            echo "<img src='" . htmlspecialchars($screenshot) . "' alt='Screenshot' style='width:100px; height:100px; margin-right:10px;'>";
+        }
+    } else {
+        echo "<p>No screenshots available.</p>";
+    }
+    
+    // Debug information
+    /*
+    if ($logged_in) {
+        echo "<p>Logged in as user ID: " . htmlspecialchars($current_userid) . "</p>";
+        // Since creatorid is NOT NULL in the schema, it should always be present
+        echo "<p>App creator ID: " . htmlspecialchars($row['creatorid']) . "</p>";
+        if ($row['creatorid'] === $current_userid) {
+            echo "<p>You are the creator.</p>";
+        } else {
+            echo "<p>You are not the creator.</p>";
+        }
+    } else {
+        echo "<p>Not logged in.</p>";
+    }
+    */
+    // Show Edit button only if user is logged in and is the creator
+    if ($logged_in && ((int)$row['creatorid'] === (int)$current_userid)) {
+        echo "<br><a href='edit_app.php?appid=" . htmlspecialchars($row['appid']) . "' style='display:inline-block; padding:5px 10px; background-color:#4CAF50; color:white; text-decoration:none;'>Edit</a>";
+    }
+    
+    // Determine app price and purchase status
+    $costdollars = $row['costdollars'];
+    $costcents = $row['costcents'];
+    $is_free = ($costdollars == 0 && $costcents == 0);
+    $is_purchased = $logged_in && in_array($row['appid'], $purchased_appids);
+    
+    // Show "Play Game" if app is free or purchased
+    if ($is_free || $is_purchased) {
+        echo "<form action='iframe.php' method='post' style='display:inline-block; margin-left:10px;'>";
+        echo "<textarea name='jsonapp' style='display:none;'>" 
+             . htmlspecialchars($row['appjson'], ENT_QUOTES, 'UTF-8') . "</textarea>";
+        echo "<input type='submit' value='Play Game' style='padding:5px 10px; background-color:#4CAF50; color:white; border:none; cursor:pointer;'>";
+        echo "</form>";
+    }
+    
+    // Show "Purchase" if price is greater than $0.00
+    if (!$is_free) {
+        echo "<form action='googlepay.php' method='post' style='display:inline;' onsubmit='return confirm(\"Are you sure you want to purchase this app?\");'>";
+        echo "<input type='hidden' name='appid' value='" . htmlspecialchars($row['appid']) . "'>";
+        echo "<input type='hidden' name='priceDollas' value='" . htmlspecialchars($costdollars) . "'>";
+        echo "<input type='hidden' name='priceCents' value='" . htmlspecialchars($costcents) . "'>";
+        echo "<input type='submit' value='Purchase' style='padding:5px 10px; background-color:#4CAF50; color:white; border:none; cursor:pointer; margin-left:10px;'>";
+        echo "</form>";
+        
+        /*
+        echo "<form action='purchase_app.php' method='post' style='display:inline;' onsubmit='return confirm(\"Are you sure you want to purchase this app?\");'>";
+        echo "<input type='hidden' name='appid' value='" . htmlspecialchars($row['appid']) . "'>";
+        echo "<input type='submit' value='Purchase' style='padding:5px 10px; background-color:#4CAF50; color:white; border:none; cursor:pointer; margin-left:10px;'>";
+        echo "</form>";
+        */
+    }
+    
+    echo "</div>";
+}
+
+$db->close();
+?>
+    </body>
+</html>

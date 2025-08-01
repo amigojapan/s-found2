@@ -1,0 +1,10 @@
+{
+  "appId": "com.example.app",
+  "appName": "ta",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

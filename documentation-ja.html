@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s-found 2 ゲーム機能のドキュメント</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <a href="documentation.html">English</a> |<a href="documentation-es.html">Español</a> |<a href="documentation-ja.html">日本語</a>
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6 text-center">s-found 2 ゲーム機能のドキュメント</h1>
+        <p class="text-gray-600 mb-8">このドキュメントは、s-found 2 ベースのゲームで使用されるJavaScript関数のセットを説明します。これには、スプライト管理、衝突検出、移動、その他のゲームメカニクスが含まれます。</p>
+
+        <div class="space-y-8">
+            <!-- onSpriteClick -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">onSpriteClick(sprite, pointer)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>sprite</code>: クリックされたスプライトオブジェクト。</li>
+                    <li><code>pointer</code>: クリックイベントを表すポインタオブジェクト。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> スプライトのクリックイベントに対するデフォルトのイベントハンドラ。カスタム動作を実装するためにオーバーライドできます。</p>
+            </div>
+
+            <!-- RadianstoDegrees -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">RadianstoDegrees(angle)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>angle</code>: ラジアン単位の角度。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 角度をラジアンから度に変換します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 度単位の角度。</p>
+            </div>
+
+            <!-- DegreestoRadians -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">DegreestoRadians(angle)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>angle</code>: 度単位の角度。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 角度を度からラジアンに変換します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> ラジアン単位の角度。</p>
+            </div>
+
+            <!-- normalize_angle_hack -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">normalize_angle_hack(angle)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>angle</code>: 正規化する度単位の角度。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 角度を[0, 360)度の範囲に正規化します。反復的なモジュロ演算を使用します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 正規化された度単位の角度。</p>
+            </div>
+
+            <!-- clone_sprite -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">clone_sprite()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトのクローンを作成し、位置、キー、フレーム、フレームセットをコピーします。クローンは前面レイヤーに追加され、スケーリングされ、中心回転を伴う物理が有効になります。元のスプライトは重複を避けるために非表示になります。</p>
+            </div>
+
+            <!-- destroy_current_sprite -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">destroy_current_sprite()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトとそのフレームを破壊します。スプライトがクローンの場合、スプライトのクローンリストからクローンを削除します。</p>
+            </div>
+
+            <!-- hide_current_sprite -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">hide_current_sprite()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトとそのフレームの可視性をfalseに設定して非表示にします。クローンされたスプライトと非クローンのスプライトの両方を処理します。</p>
+            </div>
+
+            <!-- show_current_sprite -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">show_current_sprite()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトとその現在のフレームの可視性をtrueに設定して表示します。クローンされたスプライトと非クローンのスプライトの両方を処理します。</p>
+            </div>
+
+            <!-- find_sprite_object_by_name_new -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">find_sprite_object_by_name_new(sprite_name)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>sprite_name</code>: 検索するスプライトの名前。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> <code>find_sprite_object_by_name</code>と同様に、名前でスプライトを見つけ、必要に応じてクローンを処理します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> スプライトオブジェクト。見つからない場合、またはスプライト名が提供されていない場合はnull。</p>
+            </div>
+
+            <!-- find_target_sprite_with_clones_object_by_name -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">find_target_sprite_with_clones_object_by_name(sprite_name)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>sprite_name</code>: 検索するターゲットスプライトの名前。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 名前でターゲットスプライトを見つけ、<code>current_target_clone</code>を介してターゲットクローンが指定されている場合はクローンを返します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> スプライトオブジェクト。見つからない場合、またはスプライト名が提供されていない場合はnull。</p>
+            </div>
+
+            <!-- set_current_sprite_name -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">set_current_sprite_name(sprite_name)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>sprite_name</code>: 現在のスプライトとして設定するスプライトの名前。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> グローバル変数<code>current_sprite_name</code>を提供されたスプライト名に設定します。</p>
+            </div>
+
+            <!-- set_target_sprite_name -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">set_target_sprite_name(sprite_name)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>sprite_name</code>: ターゲットスプライトとして設定するスプライトの名前。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> グローバル変数<code>target_sprite_name</code>を提供されたスプライト名に設定します。</p>
+            </div>
+
+            <!-- point_in_direction_degrees -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">point_in_direction_degrees(angle_degrees)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>angle_degrees</code>: スプライトを回転させる度単位の角度。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトを指定された角度（度単位）に向けます。</p>
+            </div>
+
+            <!-- point_sprite_in_direction_to_point -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">point_sprite_in_direction_to_point(destination_x, destination_y)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>destination_x</code>: ターゲットポイントのX座標。</li>
+                    <li><code>destination_y</code>: ターゲットポイントのY座標。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトをゲームワールド内の指定されたポイントに向けます。</p>
+            </div>
+
+            <!-- point_in_direction -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">point_in_direction(x1, y1, x2, y2)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>x1, y1</code>: 開始ポイントの座標。</li>
+                    <li><code>x2, y2</code>: ターゲットポイントの座標。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> <code>Math.atan2</code>を使用して2つのポイント間の角度（度単位）を計算します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 度単位の角度。</p>
+            </div>
+
+            <!-- point_spriteA_in_direction_spriteB -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">point_spriteA_in_direction_spriteB(a_x, a_y, b_x, b_y)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>a_x, a_y</code>: 現在のスプライトの座標（スプライトは名前で取得されるため無視されます）。</li>
+                    <li><code>b_x, b_y</code>: ターゲットスプライトの座標（スプライトは名前で取得されるため無視されます）。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトをターゲットスプライトの現在の位置に向けます。</p>
+            </div>
+
+            <!-- foward -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">foward(distance)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>distance</code>: スプライトを前方に移動させる距離。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトを向いている方向に指定された距離だけ前方に移動させ、フレームの位置を適切に更新します。</p>
+            </div>
+
+            <!-- distance_between_sprite_and_target -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">distance_between_sprite_and_target()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトとターゲットスプライトの間のユークリッド距離を計算します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 距離（数値）。</p>
+            </div>
+
+            <!-- set_x_to -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">set_x_to(X)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>X</code>: スプライトに設定するX座標。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトのX座標を設定し、フレームの位置を更新します。</p>
+            </div>
+
+            <!-- set_y_to -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">set_y_to(Y)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>Y</code>: スプライトに設定するY座標。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトのY座標を設定し、フレームの位置を更新します。</p>
+            </div>
+
+            <!-- turn_right -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">turn_right(degrees)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>degrees</code>: スプライトを時計回りに回転させる度数。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトを指定された度数だけ時計回りに回転させ、フレームの位置を更新します。</p>
+            </div>
+
+            <!-- turn_left -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">turn_left(degrees)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>degrees</code>: スプライトを反時計回りに回転させる度数。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトを指定された度数だけ反時計回りに回転させ、フレームの位置を更新します。</p>
+            </div>
+
+            <!-- get_x_value -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">get_x_value()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトのX座標を取得します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> X座標（数値）。</p>
+            </div>
+
+            <!-- get_y_value -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">get_y_value()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトのY座標を取得します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> Y座標（数値）。</p>
+            </div>
+
+            <!-- sprite_width -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">sprite_width()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトの幅を取得します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 幅（数値）。</p>
+            </div>
+
+            <!-- sprite_height -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">sprite_height()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトの高さを取得します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 高さ（数値）。</p>
+            </div>
+
+            <!-- biased -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">biased(a, b, c, d)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>a, b</code>: 最初の範囲の境界。</li>
+                    <li><code>c, d</code>: 2番目の範囲の境界。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> ポイント<code>c</code>が範囲<code>[a, b)</code>内にあるか、または<code>d</code>が範囲<code>(a, b]</code>内にあるかを確認します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 条件が満たされているかを示すブール値。</p>
+            </div>
+
+            <!-- unbiased -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">unbiased(a, b, c, d)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>a, b</code>: 最初の範囲の境界。</li>
+                    <li><code>c, d</code>: 2番目の範囲の境界。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> <code>biased</code>関数を使用して、どちらかの範囲が他方と重複しているかを確認します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 重複を示すブール値。</p>
+            </div>
+
+            <!-- collision -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">collision(r1, r2)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>r1, r2</code>: <code>top, bottom, left, right</code>プロパティを持つ矩形オブジェクト。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> <code>unbiased</code>関数を使用して、2つの矩形がXおよびY範囲で重複しているかを確認します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 矩形が衝突しているかを示すブール値。</p>
+            </div>
+
+            <!-- intersectRect -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">intersectRect(s1, s2)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>s1, s2</code>: <code>x, y, width, height</code>プロパティを持つスプライトオブジェクト。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> スプライトの座標と寸法を矩形オブジェクトに変換し、<code>collision</code>関数を使用して衝突を確認します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> スプライトのバウンディングボックスが交差しているかを示すブール値。</p>
+            </div>
+
+            <!-- current_sprite_clones_are_colliding_with_target_sprite_clones -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">current_sprite_clones_are_colliding_with_target_sprite_clones()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライト（またはそのクローン）がターゲットスプライト（またはそのクローン）とバウンディングボックス衝突検出を使用して衝突しているかを確認します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 衝突を示すブール値。</p>
+            </div>
+
+            <!-- is_colliding_with_target -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">is_colliding_with_target()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトがターゲットスプライトとバウンディングボックス衝突検出を使用して衝突しているかを確認します。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 衝突を示すブール値。</p>
+            </div>
+
+            <!-- next_fame -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">next_fame()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> 現在のスプライトをアニメーションの次のフレームに進め、末尾の場合は最初のフレームに戻ります。スプライトの非表示状態に基づいて可視性を更新します。</p>
+            </div>
+
+            <!-- set_frame_to_frame_number -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">set_frame_to_frame_number(frame_number_or_alias, force_game_object)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>frame_number_or_alias</code>: 設定するフレーム番号またはエイリアス。</li>
+                    <li><code>force_game_object</code>: 現在のスプライトを上書きするオプションのスプライト名。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> スプライトのフレームを指定された番号またはエイリアスに設定し、クローンされたスプライトと非クローンのスプライトの両方を処理します。可視性を適切に更新します。</p>
+            </div>
+
+            <!-- current_frame_number -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">current_frame_number()</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong> なし</p>
+                <p class="text-gray-700"><strong>説明:</strong> スプライトの現在のフレーム番号を取得します。番号を返す前に現在のフレームを非表示にします。</p>
+                <p class="text-gray-700"><strong>戻り値:</strong> 現在のフレーム番号。フレームが存在しない場合は0。</p>
+            </div>
+
+            <!-- update_position_of_frames -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">update_position_of_frames(game_Object)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>game_Object</code>: フレームを更新する必要があるスプライトオブジェクト。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> スプライトのすべてのフレームの位置と回転を、メインスプライトの位置と角度に一致するように更新します。</p>
+            </div>
+
+            <!-- loadAndPlaySound -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">loadAndPlaySound(key, url)</h2>
+                <p class="text-gray-700"><strong>パラメータ:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>key</code>: オーディオアセットのキー。</li>
+                    <li><code>url</code>: 読み込むオーディオファイルのURL。</li>
+                </ul>
+                <p class="text-gray-700"><strong>説明:</strong> キャッシュされていない場合にオーディオファイルを読み込み、Phaserのオーディオシステムを使用して再生します。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

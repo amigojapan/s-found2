@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación de Funciones del Juego s-found 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <a href="documentation.html">English</a> |<a href="documentation-es.html">Español</a> |<a href="documentation-ja.html">日本語</a>
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6 text-center">Documentación de Funciones del Juego s-found 2</h1>
+        <p class="text-gray-600 mb-8">Este documento describe un conjunto de funciones JavaScript utilizadas en un juego basado en s-found 2 para la gestión de sprites, detección de colisiones, movimiento y otras mecánicas del juego.</p>
+
+        <div class="space-y-8">
+            <!-- onSpriteClick -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">onSpriteClick(sprite, pointer)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>sprite</code>: El objeto sprite en el que se hizo clic.</li>
+                    <li><code>pointer</code>: El objeto puntero que representa el evento de clic.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Un controlador de eventos predeterminado para eventos de clic en sprites. Puede ser sobrescrito para implementar un comportamiento personalizado.</p>
+            </div>
+
+            <!-- RadianstoDegrees -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">RadianstoDegrees(angle)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>angle</code>: Ángulo en radianes.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Convierte un ángulo de radianes a grados.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> El ángulo en grados.</p>
+            </div>
+
+            <!-- DegreestoRadians -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">DegreestoRadians(angle)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>angle</code>: Ángulo en grados.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Convierte un ángulo de grados a radianes.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> El ángulo en radianes.</p>
+            </div>
+
+            <!-- normalize_angle_hack -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">normalize_angle_hack(angle)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>angle</code>: Ángulo en grados a normalizar.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Normaliza un ángulo al rango [0, 360) grados usando una operación de módulo repetitiva.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> El ángulo normalizado en grados.</p>
+            </div>
+
+            <!-- clone_sprite -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">clone_sprite()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Crea un clon del sprite actual, copiando su posición, clave, marco y marcos. El clon se agrega a la capa frontal, se escala y se habilita con física con rotación centrada. El sprite original se oculta para evitar duplicación.</p>
+            </div>
+
+            <!-- destroy_current_sprite -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">destroy_current_sprite()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Destruye el sprite actual y sus marcos. Si el sprite es un clon, elimina el clon de la lista de clones del sprite.</p>
+            </div>
+
+            <!-- hide_current_sprite -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">hide_current_sprite()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Oculta el sprite actual y sus marcos estableciendo su visibilidad en falso. Maneja tanto sprites clonados como no clonados.</p>
+            </div>
+
+            <!-- show_current_sprite -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">show_current_sprite()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Muestra el sprite actual y su marco actual estableciendo su visibilidad en verdadero. Maneja tanto sprites clonados como no clonados.</p>
+            </div>
+
+            <!-- find_sprite_object_by_name_new -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">find_sprite_object_by_name_new(sprite_name)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>sprite_name</code>: Nombre del sprite a encontrar.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Similar a <code>find_sprite_object_by_name</code>, encuentra un sprite por su nombre, manejando clones si aplica.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> El objeto sprite o null si no se encuentra o si no se proporciona un nombre de sprite.</p>
+            </div>
+
+            <!-- find_target_sprite_with_clones_object_by_name -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">find_target_sprite_with_clones_object_by_name(sprite_name)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>sprite_name</code>: Nombre del sprite objetivo a encontrar.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Encuentra un sprite objetivo por su nombre, retornando un clon si se especifica un clon objetivo mediante <code>current_target_clone</code>.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> El objeto sprite o null si no se encuentra o si no se proporciona un nombre de sprite.</p>
+            </div>
+
+            <!-- set_current_sprite_name -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">set_current_sprite_name(sprite_name)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>sprite_name</code>: Nombre del sprite a establecer como actual.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Establece la variable global <code>current_sprite_name</code> al nombre de sprite proporcionado.</p>
+            </div>
+
+            <!-- set_target_sprite_name -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">set_target_sprite_name(sprite_name)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>sprite_name</code>: Nombre del sprite a establecer como objetivo.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Establece la variable global <code>target_sprite_name</code> al nombre de sprite proporcionado.</p>
+            </div>
+
+            <!-- point_in_direction_degrees -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">point_in_direction_degrees(angle_degrees)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>angle_degrees</code>: Ángulo en grados para rotar el sprite.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Rota el sprite actual para que mire hacia el ángulo especificado (en grados).</p>
+            </div>
+
+            <!-- point_sprite_in_direction_to_point -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">point_sprite_in_direction_to_point(destination_x, destination_y)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>destination_x</code>: Coordenada X del punto objetivo.</li>
+                    <li><code>destination_y</code>: Coordenada Y del punto objetivo.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Rota el sprite actual para que mire hacia un punto especificado en el mundo del juego.</p>
+            </div>
+
+            <!-- point_in_direction -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">point_in_direction(x1, y1, x2, y2)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>x1, y1</code>: Coordenadas del punto inicial.</li>
+                    <li><code>x2, y2</code>: Coordenadas del punto objetivo.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Calcula el ángulo (en grados) entre dos puntos usando <code>Math.atan2</code>.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> El ángulo en grados.</p>
+            </div>
+
+            <!-- point_spriteA_in_direction_spriteB -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">point_spriteA_in_direction_spriteB(a_x, a_y, b_x, b_y)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>a_x, a_y</code>: Coordenadas del sprite actual (ignoradas, ya que el sprite se obtiene por nombre).</li>
+                    <li><code>b_x, b_y</code>: Coordenadas del sprite objetivo (ignoradas, ya que el sprite se obtiene por nombre).</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Rota el sprite actual para que mire hacia el sprite objetivo usando sus posiciones actuales.</p>
+            </div>
+
+            <!-- foward -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">foward(distance)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>distance</code>: Distancia para mover el sprite hacia adelante.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Mueve el sprite actual hacia adelante la distancia especificada en la dirección que está mirando, actualizando las posiciones de los marcos en consecuencia.</p>
+            </div>
+
+            <!-- distance_between_sprite_and_target -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">distance_between_sprite_and_target()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Calcula la distancia euclidiana entre el sprite actual y el sprite objetivo.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> La distancia como un número.</p>
+            </div>
+
+            <!-- set_x_to -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">set_x_to(X)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>X</code>: La coordenada x para establecer en el sprite.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Establece la coordenada x del sprite actual y actualiza las posiciones de sus marcos.</p>
+            </div>
+
+            <!-- set_y_to -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">set_y_to(Y)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>Y</code>: La coordenada y para establecer en el sprite.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Establece la coordenada y del sprite actual y actualiza las posiciones de sus marcos.</p>
+            </div>
+
+            <!-- turn_right -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">turn_right(degrees)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>degrees</code>: Número de grados para rotar el sprite en el sentido de las agujas del reloj.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Rota el sprite actual en el sentido de las agujas del reloj por los grados especificados y actualiza las posiciones de los marcos.</p>
+            </div>
+
+            <!-- turn_left -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">turn_left(degrees)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>degrees</code>: Número de grados para rotar el sprite en sentido contrario a las agujas del reloj.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Rota el sprite actual en sentido contrario a las agujas del reloj por los grados especificados y actualiza las posiciones de los marcos.</p>
+            </div>
+
+            <!-- get_x_value -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">get_x_value()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Recupera la coordenada x del sprite actual.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> La coordenada x como un número.</p>
+            </div>
+
+            <!-- get_y_value -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">get_y_value()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Recupera la coordenada y del sprite actual.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> La coordenada y como un número.</p>
+            </div>
+
+            <!-- sprite_width -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">sprite_width()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Recupera el ancho del sprite actual.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> El ancho como un número.</p>
+            </div>
+
+            <!-- sprite_height -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">sprite_height()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Recupera la altura del sprite actual.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> La altura como un número.</p>
+            </div>
+
+            <!-- biased -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">biased(a, b, c, d)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>a, b</code>: Límites del rango para el primer intervalo.</li>
+                    <li><code>c, d</code>: Límites del rango para el segundo intervalo.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Verifica si el punto <code>c</code> está dentro del rango <code>[a, b)</code> o si <code>d</code> está dentro de <code>(a, b]</code>.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> Booleano que indica si se cumple la condición.</p>
+            </div>
+
+            <!-- unbiased -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">unbiased(a, b, c, d)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>a, b</code>: Límites del rango para el primer intervalo.</li>
+                    <li><code>c, d</code>: Límites del rango para el segundo intervalo.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Verifica si alguno de los intervalos se superpone con el otro usando la función <code>biased</code>.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> Booleano que indica superposición.</p>
+            </div>
+
+            <!-- collision -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">collision(r1, r2)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>r1, r2</code>: Objetos rectangulares con propiedades <code>top, bottom, left, right</code>.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Verifica si dos rectángulos se superponen usando la función <code>unbiased</code> para sus rangos x e y.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> Booleano que indica si los rectángulos colisionan.</p>
+            </div>
+
+            <!-- intersectRect -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">intersectRect(s1, s2)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>s1, s2</code>: Objetos sprite con propiedades <code>x, y, width, height</code>.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Convierte las coordenadas y dimensiones de los sprites en objetos rectangulares y verifica la colisión usando la función <code>collision</code>.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> Booleano que indica si los cuadros delimitadores de los sprites se intersectan.</p>
+            </div>
+
+            <!-- current_sprite_clones_are_colliding_with_target_sprite_clones -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">current_sprite_clones_are_colliding_with_target_sprite_clones()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Verifica si el sprite actual (o su clon) colisiona con el sprite objetivo (o su clon) usando detección de colisión de cuadros delimitadores.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> Booleano que indica colisión.</p>
+            </div>
+
+            <!-- is_colliding_with_target -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">is_colliding_with_target()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Verifica si el sprite actual colisiona con el sprite objetivo usando detección de colisión de cuadros delimitadores.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> Booleano que indica colisión.</p>
+            </div>
+
+            <!-- next_fame -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">next_fame()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Avanza el sprite actual al siguiente marco en su animación, volviendo al primer marco si está al final. Actualiza la visibilidad según el estado oculto del sprite.</p>
+            </div>
+
+            <!-- set_frame_to_frame_number -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">set_frame_to_frame_number(frame_number_or_alias, force_game_object)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>frame_number_or_alias</code>: Número de marco o alias a establecer.</li>
+                    <li><code>force_game_object</code>: Nombre de sprite opcional para sobrescribir el sprite actual.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Establece el marco del sprite al número o alias especificado, manejando tanto sprites clonados como no clonados. Actualiza la visibilidad en consecuencia.</p>
+            </div>
+
+            <!-- current_frame_number -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">current_frame_number()</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong> Ninguno</p>
+                <p class="text-gray-700"><strong>Descripción:</strong> Recupera el número de marco actual del sprite. Oculta el marco actual antes de retornar el número.</p>
+                <p class="text-gray-700"><strong>Retorna:</strong> El número de marco actual o 0 si no existen marcos.</p>
+            </div>
+
+            <!-- update_position_of_frames -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">update_position_of_frames(game_Object)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>game_Object</code>: El objeto sprite cuyos marcos necesitan actualizarse.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Actualiza la posición y rotación de todos los marcos de un sprite para que coincidan con la posición y ángulo del sprite principal.</p>
+            </div>
+
+            <!-- loadAndPlaySound -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">loadAndPlaySound(key, url)</h2>
+                <p class="text-gray-700"><strong>Parámetros:</strong></p>
+                <ul class="list-disc pl-5 mb-2">
+                    <li><code>key</code>: La clave para el activo de audio.</li>
+                    <li><code>url</code>: La URL del archivo de audio a cargar.</li>
+                </ul>
+                <p class="text-gray-700"><strong>Descripción:</strong> Carga un archivo de audio si no está ya en caché y lo reproduce usando el sistema de audio de Phaser.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

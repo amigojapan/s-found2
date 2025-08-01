@@ -1,0 +1,877 @@
+    1  scrot
+    2  git clone --recursive https://github.com/coronalabs/corona~
+    3  sudo apt install git
+    4  git clone --recursive https://github.com/coronalabs/corona~
+    5  git clone --recursive https://github.com/coronalabs/corona
+    6  cd corona
+    7  cmake .
+    8  sudo apt install cmake
+    9  cmake .
+   10  sudo apt-get install libpng-dev
+   11  sudo apt-get install zlib1g-dev
+   12  cmake .
+   13  sudo apt-get install libgl1-mesa-dev
+   14  cmake .
+   15  sudo updatedb
+   16  sudo apt update
+   17  sudo apt install libboost-all-dev
+   18  cmake .
+   19  cd
+   20  git clone https://github.com/kcat/openal-soft
+   21  cd openal-soft/
+   22  cmake .
+   23  cmake install
+   24  cmake --build
+   25  cmake ..
+   26  ls
+   27  cmake build
+   28  ls
+   29  cmake-gui
+   30  sudo apt install cmake-qt-gui
+   31  cmake-gui 
+   32  cmake .
+   33  ls
+   34  ./build/
+   35  ls
+   36  cd ..
+   37  ls
+   38  camke build
+   39  cd ..
+   40  cd amigojapan/
+   41  cd openal-soft/
+   42  ls
+   43  cmake build
+   44  cmake
+   45  cmake .\
+   46  cmake .
+   47  ls
+   48  cmake --build .
+   49  sudo apt install libopenal1
+   50  cd  ../corona/
+   51  cmake .
+   52  locate al.h
+   53  locate al.h | less
+   54  sudo updatedb
+   55  locate al.h
+   56  locate al.h | less
+   57  localte AL/al.h
+   58  locate AL/al.h
+   59  $OPENALDIR=-/corona/platform/windows/OpenAL.Library.WinRT/AL/al.h
+   60  $OPENALDIR="-/corona/platform/windows/OpenAL.Library.WinRT/AL/al.h"
+   61  $OPENALDIR=/home/amigojapan/openal-soft/include/AL/al.h
+   62  ls /home/amigojapan/openal-soft/include//AL/al.h
+   63  $OPENALDIR=/home/amigojapan/openal-soft/include/AL/
+   64  $OPENALDIR=/home/amigojapan/openal-soft/include/AL
+   65  export $OPENALDIR=/home/amigojapan/openal-soft/include/AL
+   66  export $OPENALDIR=/home/amigojapan/openal-soft/include/AL/
+   67  locate freetype/include
+   68  less /home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.cpp
+   69  nano /home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.cpp
+   70  sudo updatedb
+   71  locate OtherworldFrontier
+   72  nano /home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.h
+   73  code /home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.h
+   74  sudo anydesk
+   75  sudo anydesk --admin-settings
+   76  sudo su
+   77  ls
+   78  cd ドキュメント
+   79  ls
+   80  mv ultimate-guide-to-install-solar2d-on-linux.txt  ../Documents/
+   81  cd ..
+   82  cd Documents/
+   83  nano ultimate-guide-to-install-solar2d-on-linux.txt 
+   84  export $OPENALDIR=/home/amigojapan/openal-soft/
+   85  export $OPENALDIR="/home/amigojapan/openal-soft/"
+   86  export OPENALDIR="/home/amigojapan/openal-soft/"
+   87  locate AL/al.h
+   88  export OPENALDIR=/home/amigojapan/openal-soft/include/AL/
+   89  cd corona/
+   90  make .
+   91  ls
+   92  cmake .
+   93  export CMAKE_PREFIX_PATH=/home/amigojapan/openal-soft/lib/
+   94  cmake .
+   95  ls /home/amigojapan/openal-soft/lib/
+   96  ls /home/amigojapan/openal-soft/
+   97  export CMAKE_PREFIX_PATH=/home/amigojapan/openal-soft/
+   98  cmake .
+   99  locate freetype.so
+  100  cmake . -DFREETYPE_LIBRARY=/usr/lib/x86_64-linux-gnu/libfreetype.so.6 -DFREETYPE_INCLUDE_DIRS=/usr/lib/x86_64-linux-gnu/include
+  101  sudo apt-get install freetype
+  102  cmake .
+  103  sudo updatedb
+  104  locate freetype.so
+  105  /usr/lib/x86_64-linux-gnu/
+  106  locate freetype.so
+  107  ls /usr/lib/x86_64-linux-gnu/libfre*
+  108  ls /usr/lib/x86_64-linux-gnu/libfreetype.so.6
+  109  cmake . -DFREETYPE_LIBRARY=/usr/lib/x86_64-linux-gnu/libfreetype.so.6
+  110  sudo apt update && sudo apt upgrade && sudo apt install curl libcurl4-openssl-dev
+  111  cmake . -DFREETYPE_LIBRARY=/usr/lib/x86_64-linux-gnu/libfreetype.so.6
+  112  ls
+  113  cd bin/
+  114  ls
+  115  cd ..
+  116  ls
+  117  make
+  118  sudo apt install libgl1-mesa-dev libfreetype-dev libcurl4 libcurl4-gnutls-dev l>
+  119  libssl-dev libsdl2-dev libjpeg-dev
+  120  sudo apt install libgl1-mesa-dev libfreetype-dev libcurl4 libcurl4-gnutls-dev 
+  121  sudo apt install libpcap-dev
+  122  make
+  123  sudo apt install libpcap-dev
+  124  sudo apt install  libssl-dev
+  125  make
+  126  sudo apt-get install libsdl2-dev
+  127  make
+  128  sudo apt-get install libjpeg-dev
+  129  make
+  130  cd .,.
+  131  git clone --recursive https://github.com/coronalabs/corona
+  132  rm corona/
+  133  rm -r corona/
+  134  sudo rm -r corona/
+  135  git clone --recursive https://github.com/coronalabs/corona
+  136  cd corona/
+  137  cmake .
+  138  make
+  139  sudo apt install lua5.3
+  140  luarocks install luasocket
+  141  sudo apt install luarocks
+  142  luarocks install luasocket
+  143  sudo luarocks install luasocket
+  144  luarocks install https://raw.githubusercontent.com/diegonehab/luasocket/master/luasocket-scm-0.rockspec
+  145  sudo luarocks install https://raw.githubusercontent.com/diegonehab/luasocket/master/luasocket-scm-0.rockspec
+  146  luarocks install luasocket
+  147  sudo luarocks install luasocket
+  148  sudo apt install liblua5.3-dev
+  149  sudo luarocks install luasocket
+  150  make
+  151  less /home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.h:
+  152  home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.cpp
+  153  /home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.cpp
+  154  less /home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.cpp
+  155  ake
+  156  make
+  157  SDL_LIB = -L/usr/local/lib -lSDL2 -Wl,-rpath=/usr/local/lib, -lSDL2_image
+  158  sudo apt-get install libsdl2-2.0-0
+  159  make
+  160  sudo apt install libfl-dev
+  161  make
+  162  locate openal
+  163  locate openal.so
+  164  echo $LD_LIBRARY_PATH
+  165  export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/
+  166  make
+  167  echo $LD_LIBRARY_PATH
+  168  locate openal.so
+  169  export LD_LIBRARY_PATH=/home/amigojapan/openal-soft/
+  170  make
+  171  code CMakeFiles/Solar2D.dir/build.make
+  172  code CMakeFiles/Solar2D.dir/link.txt
+  173  locate openal.so
+  174  sudo apt-get install libopenal-dev
+  175  make
+  176  ./Solar2D
+  177  cd
+  178  git clone https://github.com/shiftkey/desktop
+  179  cd corona/
+  180  ./Solar2D
+  181  anydesk
+  182  anydesk --admin-settings
+  183  sudo anydesk --admin-settings
+  184  /home/amigojapan/corona/Resources/debug.keystore
+  185  ls  /home/amigojapan/corona/Resources/debug.keystore
+  186  ls /home/amigojapan/corona/Resources/webtemplate.zip
+  187  ls -alF /home/amigojapan/corona/Resources/webtemplate.zip
+  188  locate webtemplate.zip
+  189  cd Documents/GitHub/
+  190  ls
+  191  cd ..
+  192  ls
+  193  cd Solar2D\ Built\ Apps/
+  194  ls
+  195  cd LingoHeroine.html5/
+  196  ls
+  197  python -m http. server 8000
+  198  python3 -m http. server 8000
+  199  pip3 install http
+  200  sudo apt install pip3
+  201  sudo apt install pip
+  202  pip3 install http
+  203  python3 -m http. server 8000
+  204  pip install http
+  205  sudo apt install python-http
+  206  sudo apt install python3-http
+  207  sudo apt install python3-httpd
+  208  python3 -m httpd. server 8000
+  209  python3 -m httpd server 8000
+  210  python3 -m http server 8000
+  211  python -m http. server 8000
+  212  python3 -m http. server 8000
+  213  python
+  214  python3
+  215  locate build.gradle
+  216  code [200~/home/amigojapan/corona/Resources/Native/plugins/licensing-google/android/plugin/build.gradle
+  217  code /home/amigojapan/corona/plugins/licensing-google/android/plugin/build.gradle
+  218  code ~/home/amigojapan/corona/Resources/Native/plugins/licensing-google/android/plugin/build.gradle
+  219  sudo apt-get install openjdk-11-jdk
+  220  sudo update-alternatives --config java
+  221  sudo update-alternatives --config javac
+  222  sudo add-apt-repository ppa:openjdk-r/ppa
+  223  sudo apt-get update 
+  224  sudo apt-get install openjdk-8-jdk
+  225  sudo update-alternatives --config java
+  226  java -version
+  227  sudo updatedb
+  228  locate jarsigner
+  229  cd corona/
+  230  ls
+  231  ls snap
+  232  ls snap*
+  233  locate webtemplate.zip
+  234  cd
+  235  mkdti tmp
+  236  mkdir tmp
+  237  locate webtemplate.zip
+  238  cp /home/amigojapan/corona/Resources/webtemplate.zip Resources/
+  239  cd corona/
+  240  ls
+  241  cp /home/amigojapan/corona/Resources/webtemplate.zip Resources/
+  242  locate Native/Corona/android
+  243  sudo apt update
+  244  sudo apt install snapd
+  245  sudo snap install snapd
+  246  cp /snap/solar2d/current/usr/local/bin/Solar2D/Resources/Native/Corona/android ./Resources/Native/Corona/.
+  247  sudo mount -t squashfs -o ro /path/to/my.snap /path/to/mountpoint
+  248  cd 
+  249  sudo mount -t squashfs -o ro /path/to/my.snap /tmp/
+  250  sudo mount -t squashfs -o ro solar2d /tmp/
+  251  sudo mount -t squashfs -o ro Solar2d /tmp/
+  252  sudo mount -t squashfs -o ro Solar2D /tmp/
+  253  sudo mount -t squashfs -o ro solar2D /tmp/
+  254  curl https://api.snapcraft.io/v2/snaps/solar2d
+  255  curl https://api.snapcraft.io/v2/snaps/Solar2d
+  256  curl https://api.snapcraft.io/v2/snaps/Solar2D
+  257  cd tmp/
+  258  curl -s -H 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/solar2d | jq '."channel-map" | map(select(.channel. architecture == "amd64" and .channel.name == "stable")) | .[0].download.url'
+  259  ld
+  260  ls
+  261  sudo apt install jq
+  262  curl -s -H 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/solar2d | jq '."channel-map" | map(select(.channel. architecture == "amd64" and .channel.name == "stable")) | .[0].download.url'
+  263  curl -s -H 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/solar2d | jq '."channel-map" | map(select(.channel.architecture == "amd64" and .channel.name == "stable")) | .[0].download.url'
+  264  curl -s -H 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/solar2d
+  265  curl -s -H 'Snap-Device-Series: 16' https://api.snapcraft.io/v1/snaps/solar2d
+  266  curl -s -H 'Snap-Device-Series: 16' https://api.snapcraft.io/v3/snaps/solar2d
+  267  curl -s -H 'Snap-Device-Series: 16' -H 'Snap-Device-Store: Ubuntu' https://api.snapcraft.io/v2/snaps/solar2d | jq '."channel-map" | map(select(.channel." architecture" == "amd64" and .channel.name == "stable")) | .[0].download.url'
+  268  sudo apt-get install squashfs-tools
+  269  unsquashfs solar2d.snap
+  270  locate snap
+  271  sudo mv /etc/apt/preferences.d/nosnap.pref ~/Documents/nosnap.backup
+  272  sudo apt update
+  273  sudo apt install snapd
+  274  snap install hello-world
+  275  hello-world
+  276  sudo snap install solar2d
+  277  solar2d
+  278  cd ..
+  279  cd corona/
+  280  ./Solar2D
+  281  sudo updatedb
+  282  locate Solar2D/Resources/Native/Corona/android
+  283  cp /snap/solar2d/current/usr/local/bin/Solar2D/Resources/Native/Corona/android ./Resources/Native/Corona/.
+  284  cp -r /snap/solar2d/current/usr/local/bin/Solar2D/Resources/Native/Corona/android ./Resources/Native/Corona/.
+  285  ./Solar2D
+  286  solar2d
+  287  ./Solar2D
+  288  sdkman
+  289  ./Solar2D
+  290  cd corona/
+  291  ./Solar2D
+  292  locate android/bild.gradle
+  293  locate android/build.gradle
+  294  openssl s_client -connect solar2d.com:443 -tls1_3
+  295  ./Solar2D
+  296  locate android-template.zip
+  297  ./Solar2D
+  298  sudo apt install openjdk-17-jdk
+  299  sudo update-alternatives --config java
+  300  ./Solar2D
+  301  code /home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.cpp
+  302  code /home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.h:
+  303  code /home/amigojapan/corona/platform/linux/src/Rtt_LinuxContainer.cpp
+  304  sudo apt install filezilla
+  305  sudo systemctl mask sleep.target suspend.target
+  306  uname -r
+  307  uname
+  308  sudo apt remove anydesk.
+  309  sudo systemctl enable rustdesk
+  310  cd corona/
+  311  ./Solar2D
+  312  sudo rustdesk --option allow-linux-headless Y
+  313  cd Documents/
+  314  ls
+  315  sudo cp LUA_Highlight_for_tilde_textEditor.lang /usr/share/libt3highlight2/
+  316  cd ..
+  317  ls
+  318  cd Documents/GitHub/
+  319  ls
+  320  cd OtherworldFrontier/
+  321  ls
+  322  tilde mainGameScreen.lua 
+  323  t3highlight --list
+  324  sudo apt install t3highlight 
+  325  t3highlight --list
+  326  ls /usr/share/libt3highlight2/
+  327  sudo tilde /usr/share/libt3highlight2/LUA_Highlight_for_tilde_textEditor.lang 
+  328  sudo mv /usr/share/libt3highlight2/LUA_Highlight_for_tilde_textEditor.lang  /usr/share/libt3highlight2/lua.lang
+  329  t3highlight --list
+  330  sudo tilde /usr/share/libt3highlight2/lua.lang 
+  331  t3highlight --list
+  332  sudo tilde /usr/share/libt3highlight2/python3.lang 
+  333  sudo tilde /usr/share/libt3highlight2/lua.lang 
+  334  cd .local/
+  335  ls
+  336  cd share/
+  337  ls
+  338  cd libt3highlight
+  339  mkdir libt3highlight
+  340  cp /usr/share/libt3highlight2/lua.lang ./libt3highlight/
+  341  cd libt3highlight/
+  342  ls
+  343  tilde
+  344  t3highlight --list
+  345  sudo updatedb
+  346  locate python3.lang
+  347  sudo ls -alF /usr/share/libt3highlight2
+  348  cd '/home/amigojapan/Documents/GitHub/OtherworldFrontier/backgrounds/' 
+  349  ls
+  350  ./convertJpgsToPngs.bash 
+  351  morgify
+  352  sudo apt install imagemagic
+  353  sudo apt install imagemagic-6.q16
+  354  display
+  355  sudo apt install imagemagick-6.q16
+  356  display
+  357  lua
+  358  sudo apt-get install input-remapper-gtk
+  359  input-remapper-gtk 
+  360  suo input-remapper-gtk 
+  361  sduo input-remapper-gtk 
+  362  sudo input-remapper-gtk 
+  363  sudo input-remapper-gtk sudo apt install input-remapper
+  364  input-remapper
+  365  cargo install xremap --features x11
+  366  sudo apt install rust
+  367  sudo input-remapper-gtk 
+  368  xmodmap
+  369  xmodmap \ `
+  370  xmodmap
+  371  xmodmap `
+  372  sudo xmodmap -e 'keycode 51 = grave asciitilde
+  373  sudo xmodmap -e 'keycode 51 = grave asciitilde'
+  374  xmodmap -e 'keycode 51 = grave asciitilde'
+  375  nano mapForwardSlashToTildeX.bash
+  376  ls
+  377  ls *.bash
+  378  mv mapForwardSlashToTildeX.bash ~/
+  379  cd
+  380  chmod  +x mapForwardSlashToTildeX.bash 
+  381  ./mapForwardSlashToTildeX.bash 
+  382  tilde
+  383  cd corona/
+  384  ./Solar2D
+  385  ls
+  386  cd
+  387  cd supybot/
+  388  ls
+  389  cd ..
+  390  sudo cp supybot/ /home/botuser/
+  391  sudo cp -r supybot/ /home/botuser/
+  392  cd /home/botuser/
+  393  su botuser
+  394  sudo nano /home/botuser/autostart.bash
+  395  sudo chmod 775 /home/botuser/autostart.bash
+  396  sudo chown botuser /home/botuser/autostart.bash
+  397  sudo ls /home/botuser/.config/systemd/user/mi_servicio.service
+  398  su - botuser
+  399  cd supybot/
+  400  ls
+  401  tilde mizunoami.py 
+  402  history
+  403  cd ..
+  404  cd Documents/
+  405  tilde instructions_for_installing_doraemon_that_only_zcom_knows.txt
+  406  cd /etc/init.d
+  407  cd /etc
+  408  ls
+  409  ls rc*
+  410  ls rc.local
+  411  sudo ls rc.local
+  412  apt update && apt install sudo curl && curl -sL https://raw.githubusercontent.com/Unitech/pm2/master/packager/setup.deb.sh | sudo -E bash -
+  413  pm2 startup
+  414  pm2
+  415  sudo pm2
+  416  su - botuser
+  417  systemctl --user daemon-reload
+  418  systemctl --user botuser
+  419  sudo systemctl --user botuser
+  420  sudo systemctl --user daemon-reload
+  421  systemctl --user enable mi_servicio.service
+  422  su botuser
+  423  ssudo ls /home/botuser/.confugure
+  424  sudo ls /home/botuser/.confugure
+  425  sudo ls /home/botuser/.configure
+  426  ls /home//botuser/.config/systemd/user/mi_servicio.service
+  427  sudo ls /home//botuser/.config/systemd/user/mi_servicio.service
+  428  sudo ls -alF /home//botuser/.config/systemd/user/mi_servicio.service
+  429  sudo chmod 775 /home//botuser/.config/systemd/user/mi_servicio.service
+  430  su botuser
+  431  systemctl --user daemon-reload
+  432  cp /home/botuser/.config/systemd/user/mi_servicio.service
+  433  cp /home/botuser/.config/systemd/user/mi_servicio.service /home/amigojapan/.config/systemd/user/mi_servicio.service
+  434  sudo cp /home/botuser/.config/systemd/user/mi_servicio.service /home/amigojapan/.config/systemd/user/mi_servicio.service
+  435  cd
+  436  nano ~/.config/systemd/user/mi_servicio.service
+  437  mkdir -p ~/.config/systemd/user
+  438  cd supybot/
+  439  ls
+  440  sudo cp ../../botuser/autostart.bash .
+  441  ls
+  442  ls a-lF
+  443  ls -alF
+  444  sudo chown amigojapan autostart.bash 
+  445  ls
+  446  ls -alF
+  447  sudo chgrp amigojapan autostart.bash 
+  448  ls -alF
+  449  ls
+  450  nano ~/.config/systemd/user/mi_servicio.service
+  451  systemctl --user daemon-reload
+  452  systemctl --user enable mi_servicio.service
+  453  systemctl --user start mi_servicio.service
+  454  systemctl --user status mi_servicio.service
+  455  ls
+  456  ./autostart.bash 
+  457  tilde autostart.bash 
+  458  ./autostart.bash 
+  459  systemctl --user start mi_servicio.service
+  460  systemctl --user status mi_servicio.service
+  461  tilde mizunoami.py
+  462  python mizunoami.py 
+  463  python3 mizunoami.py 
+  464  sudo apt install python-language_tool_python
+  465  sudo apt install python3-language_tool_python
+  466  pip3 install language_tool_python
+  467  sudo apt install python3-language_tool_python
+  468  pip install language_tool_python
+  469  sudo pip install language_tool_python
+  470  python3 mizunoami.py 
+  471  python3 --version
+  472  sudo mv /usr/lib/python3.12/EXTERNALLY-MANAGED /usr/lib/python3.12/EXTERNALLY-MANAGED.backup
+  473  pip install language_tool_python
+  474  python3 mizunoami.py 
+  475  pip install landdetect
+  476  pip install langdetect
+  477  python3 mizunoami.py 
+  478  +
+  479  pip install --upgrade language_tool_python
+  480  python3 mizunoami.py 
+  481  tilde mizunoami.py
+  482  python3 mizunoami.py 
+  483  ls
+  484  tilde akatsukinoyona.conf
+  485  cp akatsukinoyona.conf tsukinousagi.conf
+  486  tilde tsukinousagi.conf 
+  487  supybot tsukinousagi.conf 
+  488  tilde tsukinousagi.conf 
+  489  supybot tsukinousagi.conf 
+  490  sudo apt-get install python3 python3-pip python3-wheel
+  491  pip3 install --user limnoria
+  492  # You might need to add $HOME/.local/bin to your PATH
+  493  supybot-wizard
+  494  sudo apt-get install python3 python3-pip python3-wheel
+  495  pip3 install --user limnoria
+  496  try apt install
+  497  sudo apt-get install limnoria
+  498  supybot-wizard 
+  499  cd
+  500  mkdir supybot
+  501  cd supybot/
+  502  supybot-wizard 
+  503  ls
+  504  supybot ./akatsukinoyona.conf 
+  505  tilde akatsukinoyona.conf
+  506  supybot ./akatsukinoyona.conf 
+  507  tilde
+  508  t3highlight -v --list
+  509  dpkg -l | grep libt3highlight
+  510  tilde ~/Documents/GitHub/OtherworldFrontier/mainGameScreen.lua 
+  511  t3highlight -v --list
+  512  ls
+  513  ls /usr/share/libt3highlight2/*.lang
+  514  tilde /usr/share/libt3highlight2/lua.lang 
+  515  sudo tilde /usr/share/libt3highlight2/lua.lang 
+  516  t3highlight -v --list
+  517  ./mapForwardSlashToTildeX.bash 
+  518  cd /
+  519  cd
+  520  df -hT
+  521  sudo apt install kazam
+  522  t3highlight -v --list
+  523  sudo cp /usr/share/libt3highlight2/python3.lang  test.lang
+  524  t3highlight -v --list
+  525  find / -xdev -type f -print0 | xargs -0 grep -H "python3.lang"
+  526  find /usr/share/ -xdev -type f -print0 | xargs -0 grep -H "python3.lang"
+  527  tilde /usr/share/libt3highlight2/lang.map
+  528  tilde cp /usr/share/libt3highlight2/lang.map /usr/share/libt3highlight2/lang.map.backup
+  529  cp /usr/share/libt3highlight2/lang.map /usr/share/libt3highlight2/lang.map.backup
+  530  sudo cp /usr/share/libt3highlight2/lang.map /usr/share/libt3highlight2/lang.map.backup
+  531  sudo cp  /home/amigojapan/Documents/lang.map /usr/share/libt3highlight2/lang.map
+  532  t3highlight -v --list
+  533  cd /home/amigojapan/Documents/GitHub/OtherworldFrontier/
+  534  ls
+  535  tilde mainGameScreen.lua 
+  536  cd
+  537  cd Documents/
+  538  ;s
+  539  ls
+  540  tilde lang.map 
+  541  ls /usr/share/libt3highlight2/lang.map
+  542  cd
+  543  cd corona/
+  544  ./Solar2D
+  545  tilde
+  546  cd supybot/
+  547  ./autostart.bash 
+  548  cd supybot/
+  549  tilde dorv3.py 
+  550  cd
+  551  ./vtm
+  552  chmod +x vtm 
+  553  ./vtm 
+  554  cd supybot/
+  555  tiled listado.txt 
+  556  tilde listado.txt 
+  557  sudo updatedb
+  558  localte level.json
+  559  locate level.json
+  560  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  561  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json.backup
+  562  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  563  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json.backup
+  564  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  565  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json.backup
+  566  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  567  cd
+  568  cd Documents/GitHub/
+  569  ls
+  570  cd OtherworldFrontier/
+  571  git merge --abort
+  572  git status
+  573  git restore --staged levelEditor.lua
+  574  git mergetool
+  575  bc
+  576  bccomapar
+  577  git mergetool
+  578  bcompare
+  579  cd
+  580  cd corona/
+  581  ./Solar2D
+  582  sudo apt-get install krita
+  583  locate level.json
+  584  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  585  ./mapForwardSlashToTildeX.bash 
+  586  cd supybot/
+  587  ls
+  588  tilde mizunoami.py 
+  589  cd 
+  590  cd corona/
+  591  ./Solar2D
+  592  cd
+  593  cd supybot/
+  594  ls
+  595  cp mizunoami.py dorv3
+  596  tilde dorv3 
+  597  mv dorv3 dorv3.py
+  598  tilde dorv3.py 
+  599  tilre dorv3.py 
+  600  tilde dorv3 
+  601  tilde dorv3.py 
+  602  python3 dorv3.py 
+  603  tilde dorv3.py 
+  604  python3 dorv3.py 
+  605  tilde dorv3.py 
+  606  python3 dorv3.py 
+  607  tilde dorv3.py 
+  608  python3 dorv3.py 
+  609  tilde dorv3.py 
+  610  python3 dorv3.py 
+  611  tilde dorv3.py 
+  612  python3 dorv3.py 
+  613  tilde dorv3.py 
+  614  python3 dorv3.py 
+  615  tilde dorv3.py 
+  616  python3 dorv3.py 
+  617  tilde dorv3.py 
+  618  python3 dorv3.py 
+  619  tilde dorv3.py 
+  620  ls
+  621  tilde listado.txt 
+  622  cd
+  623  cd corona/
+  624  ./Solar2D
+  625  python3 mizunoami.py 
+  626  pkill -all supybot
+  627  pkill -a supybot
+  628  pkill supybos
+  629  pkill supybot
+  630  pkill python3
+  631  pkill supybot
+  632  pkill python3
+  633  pkill supybot
+  634  supybot tsukinousagi.conf
+  635  cd supybot/
+  636  ./autostart.bash 
+  637  tilde autostart.bash 
+  638  ./autostart.bash 
+  639  ls
+  640  ./autostart.bash 
+  641  supybot akatsukinoyona.conf
+  642  locate level.json
+  643  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  644  cd corona/
+  645  ./Solar2D
+  646  clear
+  647  ./Solar2D
+  648  cd
+  649  cd Documents/GitHub/
+  650  ls
+  651  cd OtherworldFrontier/
+  652  cd backgrounds/
+  653  cd Evermist-Hills.png
+  654  ls Evermist-Hills.png
+  655  ls -alF Evermist-Hills.png
+  656  cd 
+  657  cd corona/
+  658  ./Solar2D
+  659  locate level.jason
+  660  locate level.jasn
+  661  locate level.jason
+  662  locate level
+  663  locate level.j
+  664  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  665  cat /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  666  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  667  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json.backup /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  668  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json.backup /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  669  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json.backup /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  670  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  671  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json.backup /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  672  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  673  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json.backup 
+  674  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  675  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json.backup 
+  676  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json.backup /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  677  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  678  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json /home/amigojapan/Documents/GitHub/OtherworldFrontier/
+  679  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  680  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json /home/amigojapan/Documents/GitHub/OtherworldFrontier/
+  681  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  682  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json /home/amigojapan/Documents/GitHub/OtherworldFrontier/
+  683  cd
+  684  cd supybot/
+  685  ls
+  686  supybot tsukinousagi.conf
+  687  python3 mizunoami.py 
+  688  ls
+  689  supybot akatsukinoyona.conf
+  690  uptime
+  691  cd
+  692  cd corona/
+  693  ./Solar2D
+  694  locate level.jason
+  695  locate level.json
+  696  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  697  tilde
+  698  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  699  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json ~/Documents/GitHub/OtherworldFrontier/
+  700  uptime
+  701  cd corona/
+  702  ./Solar2D
+  703  clear
+  704  ./Solar2D
+  705  clear
+  706  ./Solar2D
+  707  clear
+  708  ./Solar2D
+  709  cd
+  710  cd Documents/Solar2D\ Built\ Apps/
+  711  ls
+  712  cd OtherworldFrontier.html5/
+  713  ls
+  714  python -m http.server 6001
+  715  python3 -m http.server 6001
+  716  cd
+  717  cd corona/
+  718  ./Solar2D
+  719  ls
+  720  python3 mizunoami.py 
+  721  locate level.json
+  722  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  723  cp /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json /home/amigojapan/Documents/GitHub/OtherworldFrontier/level.json
+  724  cat /proc/meminfo
+  725  cat /proc/meminfo|less
+  726  cat /proc/meminfo
+  727  cat /proc/meminfo|less
+  728  locate AppBuilder
+  729  locate *Builder
+  730  locate Solar2DBuilder
+  731  ./Solar2DBuilder 
+  732  cd
+  733  cd supybot/
+  734  supybot tsukinousagi.conf
+  735  locate level.json
+  736  cp /home/amigojapan/Documents/GitHub/OtherworldFrontier/level.json /home/amigojapan/Documents/GitHub/OtherworldFrontier/level.json.backup
+  737  cp /home/amigojapan/Documents/GitHub/OtherworldFrontier/level.json /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/
+  738  chromium
+  739  sudo apt install chromium
+  740  chromium 
+  741  tilde /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/level.json
+  742  lutris
+  743  sudo apt install lutris
+  744  lutris
+  745  cp /home/amigojapan/Documents/GitHub/OtherworldFrontier/level.json /home/amigojapan/.Solar2D/Sandbox/OtherworldFrontier/Documents/
+  746  cd
+  747  cd supybot/
+  748  ls
+  749  supybot akatsukinoyona.conf
+  750  chromium
+  751  sqlite
+  752  sqlite3
+  753  sudo apt install sqlite3
+  754  cd
+  755  sqlite3 
+  756  ls test
+  757  less test
+  758  rm test
+  759  ssh -p 5331 amjp@lab.psy-k.org
+  760  php
+  761  ssh -p 5331 amjp@lab.psy-k.org
+  762  sudo apt-get install rosegarden
+  763  ls
+  764  ssh -p 5331 amjp@lab.psy-k.org
+  765  vlc v4l2:///dev/video2:chroma=mjpg:fps=${fps} --input-slave pulse://
+  766  sensors
+  767  cd
+  768  cd corona/
+  769  ./Solar2D
+  770  cd
+  771  cd Documents/
+  772  ls
+  773  cd GitHub/
+  774  ls
+  775  cd s-found/
+  776  ls
+  777  git commit --amend --all
+  778  git push
+  779  ssh -p 5331 amjp@lab.psy-k.org
+  780  cd
+  781  python3 twoOrMore.py 
+  782  cd corona/
+  783  ./Solar2D
+  784  cd
+  785  cd Downloads/
+  786  ls
+  787  ls *found2
+  788  display
+  789  chromium 
+  790  wget https://xroutine.net/files/yoko3
+  791  cat yoko3 
+  792  wget https://xroutine.net/files/yoko6
+  793  cat yoko6 
+  794  lua
+  795  tilde luaclasses.lua
+  796  lua luaclasses.lua 
+  797  tilde luaclasses.lua
+  798  lua luaclasses.lua 
+  799  tilde luaclasses.lua
+  800  lua luaclasses.lua 
+  801  tilde luaclasses.lua
+  802  ssh -p 5331 amjp@lab.psy-k.org
+  803  cd corona/
+  804  ./Solar2D
+  805  chromium
+  806  ls
+  807  mc
+  808  cd
+  809  ./vtm 
+  810  cmatrix
+  811  echo hello, world
+  812  ls
+  813  ls -la /home/amigojapan
+  814  cd /home/amigojapan/Documents/GitHub/OtherworldFrontier/
+  815  ls
+  816  cd img/
+  817  ls -1
+  818  which feh || echo "feh not found"
+  819  sudo apt-get install feh
+  820  feh -F -D 3 *.png
+  821  quit
+  822  mc
+  823  cmatrix 
+  824  echo /dev/null 
+  825  cat  /dev/null 
+  826  chromium
+  827  apt-get install cool-retro-term
+  828  sudo apt-get install cool-retro-term
+  829  cool-retro-term 
+  830  cat /dev/random 
+  831  aplay -l
+  832  Cheese
+  833  sudo apt-get install cheese
+  834  cheese 
+  835  '/home/amigojapan/Downloads/t/bsnes-compatibility' 
+  836  synapt
+  837  synaptic
+  838  apt install virtualbox
+  839  virtualbox
+  840  ls test.html 
+  841  flock -x test.html 
+  842  flock -x ./test.html 
+  843  man flock
+  844  warp
+  845  cool-retro-term 
+  846  history > history.txt
+  847  less history.txt 
+  848  ssh -p 5331 amjp@lab.psy-k.org
+  849  cd corona/
+  850  ./Solar2D
+  851  ssh -p 5331 amjp@lab.psy-k.org
+  852  touch test.file
+  853  mv test.file /dev/null 
+  854  cat /dev/null 
+  855  sudo mv test.file /dev/null 
+  856  ls test*
+  857  cat /dev/null 
+  858  chromium 
+  859  nano file.text
+  860  cat file.text 
+  861  sudo mv file.text /dev/null 
+  862  cat /dev/null 
+  863  cat /dev/random 
+  864  ssh -p 5331 amjp@lab.psy-k.org
+  865  chromium 
+  866  cd '/home/amigojapan/Documents/GitHub/s-found/' 
+  867  diff s-found2.html s-found2.php
+  868  clear
+  869  diff s-found2.php s-found2.html
+  870  diff s-found2.php s-found2.html > diff.txt
+  871  less diff.txt 
+  872  diff s-found2.php s-found2.html > diff.txt
+  873  less diff.txt 
+  874  diff s-found2.php s-found2.html > diff.txt
+  875  less diff.txt 
+  876  diff s-found2.php s-found2.html.backup.new 
+  877  history > history.txt

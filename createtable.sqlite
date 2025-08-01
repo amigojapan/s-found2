@@ -1,0 +1,35 @@
+DROP TABLE users;
+CREATE TABLE users(
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    googleID TEXT NOT NULL UNIQUE, 
+    nickname TEXT NOT NULL UNIQUE, 
+    fullname TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE
+);
+
+DROP TABLE appstable;
+CREATE TABLE appstable(
+    appid INTEGER PRIMARY KEY AUTOINCREMENT, 
+    creatorid TEXT NOT NULL,
+    appname TEXT NOT NULL UNIQUE, 
+    appdescription TEXT NOT NULL,    
+    appjson TEXT NOT NULL, 
+    costdollars TEXT NOT NULL,
+    costcents TEXT NOT NULL,
+    screenshots TEXT NOT NULL,
+    paymenttypeisuserdecide TEXT NOT NULL,
+    FOREIGN KEY(creatorid) REFERENCES users(ID)
+);
+
+DROP TABLE IF EXISTS purchasestable;
+CREATE TABLE purchasestable(
+    purchaseid  INTEGER PRIMARY KEY AUTOINCREMENT,
+    userid TEXT NOT NULL,
+    appid INT NOT NULL,
+    FOREIGN KEY(userid) REFERENCES users(ID),
+    FOREIGN KEY(appid) REFERENCES appstable(appid)
+);
+// the games coudl be monetized in a simillar way to yotube ads, with either a usbscripttion and a free tier with ads, this would allow poor users to use the content withought paying money, while also avoid payment issues like with credit card payments( if it is only ad based)
+please make a form to fill out the appstable in PHP, using sqlite3 and prepared statements, the appid should be auto-incremented, the creatorid should be filled with the contents of a cookie called "googleID" , the appname and appdescription and costdollars and costcents should be just part of the form that the user gets prompted to fill out. screenshots should ask for screenshots for be uploaded, and contain the path to the images, paymenttypeisuserdecide should have a radio button that if the user selects yes it will put the string "true" in the field and if they select no it should put the string "false" in the field. appjson should be a part of the form that the user needs to upload a JSON file and that JSON gets stored in that appjson field.
+PRAGMA table_info(appstable);
+//seems I have the edit button in games I cant edit and viceversa
